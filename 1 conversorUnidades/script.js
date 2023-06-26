@@ -7,12 +7,12 @@ const outPutElemento = document.querySelector('#output')
 const buttonElemento = document.querySelector('#convert-btn')
 const messageElemento = document.querySelector('#message')
 //funcao para converter as unidades
-function converter(){
-    const fromValor =  fromElemento.value
+function converter() {
+    const fromValor = fromElemento.value
     const toValor = toElemento.value
-    
 
-    if(fromValor == toValor){
+
+    if (fromValor == toValor) {
         outPutElemento.value = inputElemento.value;
         messageElemento.textContent = '';
         return
@@ -28,10 +28,10 @@ function converter(){
             metros = inputElemento.value * 100;
             break;
         case "cm":
-            metros = inputElemento.value /100;
+            metros = inputElemento.value / 100;
             break;
         case "mm":
-            metros = inputElemento.value /1000;
+            metros = inputElemento.value / 1000;
             break;
         default:
             break;
@@ -46,28 +46,28 @@ function converter(){
             resultado = metros * 1000;
             break;
         case "cm":
-            resultado = metros*100;
+            resultado = metros * 100;
             break;
         case "mm":
-            resultado = metros *1000;
+            resultado = metros * 1000;
             break;
         default:
             break;
     }
     //exbir calculos
     outPutElemento.value = resultado;
-  
+
     //exibir mensagem
 
     const fromLabel = fromElemento.options[fromElemento.selectedIndex].text;
     const toLabel = toElemento.options[toElemento.selectedIndex].text;
-    
+
     const message = `${inputElemento.value} ${fromLabel} equivalem a ${resultado} ${toLabel}`;
     messageElemento.textContent = message;
     return message;
-    
+
 }
 
 //converter metros em uunidade de saida
 
-buttonElemento.addEventListener('click',converter)
+buttonElemento.addEventListener('click', converter)
